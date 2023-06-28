@@ -9,6 +9,7 @@ os.system('modprobe w1-therm')
 temp_sensor = os.environ.get('SENSORPATH')
 apikey = os.environ.get('IOTPLOTTERAPI')
 iotplotterfeed = os.environ.get('IOTPLOTTERFEED')
+iotplottersensor = os.environ.get('IOTPLOTTERSENSOR')
 makewebhook = os.environ.get('MAKEWEBHOOK')
 
 def temp_raw():
@@ -34,8 +35,8 @@ headers = {'api-key': apikey}
 
 payload = {}
 payload["data"] = {}
-payload["data"]["HOTTUB_TEMP"] = []
-payload["data"]["HOTTUB_TEMP"].append({"value":read_temp()})
+payload["data"][iotplottersensor] = []
+payload["data"][iotplottersensor].append({"value":read_temp()})
 
 requests.post(iotplotterfeed, headers=headers, data=json.dumps(payload))
 
