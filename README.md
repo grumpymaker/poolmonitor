@@ -49,19 +49,19 @@ crontab -e
 ## Hardware
 
 Sourced from anywhere:
-* Raspberry Pi 3 B+, 4, etc (install raspbian, enable ssh, update and secure, etc)
+* Raspberry Pi 3 B+, 4, etc (install raspbian, enable ssh, update and secure, install python3 / python3-pip, pip install requests, etc)
 * Case for the RPi (nice to have)
 * Power supply for RPi
 
 Adafruit Parts:
 * 1 x Large Plastic Project Enclosure - Weatherproof with Clear Top[ID:905] = $19.95
-  https://www.adafruit.com/product/905
+  * https://www.adafruit.com/product/905
 * 1 x Waterproof DS18B20 Digital temperature sensor + extras[ID:642] = $14.95
-  https://www.adafruit.com/product/642
+  * https://www.adafruit.com/product/642
 * 1 x Half-size breadboard[ID:64] = $5.00
-  https://www.adafruit.com/product/64
+  * https://www.adafruit.com/product/64
 * 1 x Adafruit Pi T-Cobbler Plus Kit Breakout for 2x20 Raspberry Pi [ID:1989] = $7.50
-  https://www.adafruit.com/product/1989
+  * https://www.adafruit.com/product/1989
 
 Hardware setup guide: https://learn.adafruit.com/adafruits-raspberry-pi-lesson-11-ds18b20-temperature-sensing/hardware
 > If you are using the "high temperature" version of the DS18B20 we sell, connect Orange Stripe to 3.3V, White connects to ground and Blue Stripe is data, pin #4.
