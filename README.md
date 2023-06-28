@@ -44,7 +44,7 @@ python3 ~/poolmonitor/iotplotter.py
 ```
 crontab -e
 
-*/5 * * * * python3 /home/pi/poolmonitor/iotsender.py
+*/5 * * * * . /home/pi/.profile; python3 /home/pi/poolmonitor/iotsender.py
 ```
 
 ## Hardware
