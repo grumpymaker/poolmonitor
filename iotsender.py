@@ -6,7 +6,10 @@ import time
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
-temp_sensor = '/sys/bus/w1/devices/28-000006b197cf/w1_slave'
+temp_sensor = os.environ.get('SENSORPATH')
+apikey = os.environ.get('IOTPLOTTERAPI')
+iotplotterfeed = os.environ.get('IOTPLOTTERFEED')
+makewebhook = os.environ.get('MAKEWEBHOOK')
 
 def temp_raw():
     f = open(temp_sensor, 'r')
@@ -27,13 +30,13 @@ def read_temp():
         return round(temp_f,1)
 
 
-headers = {'api-key': 'e8e09f57af79bfa3aa2dc53182879e7643ad651543'}
+headers = {'api-key': apikey}
 
 payload = {}
 payload["data"] = {}
 payload["data"]["HOTTUB_TEMP"] = []
 payload["data"]["HOTTUB_TEMP"].append({"value":read_temp()})
 
-requests.post("http://iotplotter.com/api/v2/feed/507729691826868583", headers=headers, data=json.dumps(payload))
+requests.post(iotplotterfeed, headers=headers, data=json.dumps(payload))
 
-#requests.post("https://hook.us1.make.com/men8mmy2fvk982cwojzaadda46ae024y", data=json.dumps(payload))
+#requests.post(makewebhook, data=json.dumps(payload))
