@@ -1,4 +1,4 @@
- # poolmonitor, a collection of data logging utilities
+# poolmonitor, a collection of data logging utilities
 
 Currently just logging a temperature probe on both my hot tub and my pool.
 
@@ -31,14 +31,14 @@ export MAKEWEBHOOK="MAKE_WEBHOOK_HERE"
 
 Source the profile and/or logout and log back into SSH.
 
-### Step 3 - Test run the script
+### Step 4 - Test run the script
 
 See if the data shows up in the IoTPlotter Feed.
 ```
 python3 ~/poolmonitor/iotplotter.py
 ```
 
-### Step 4 - Set a cronjob to run it periodically
+### Step 5 - Set a cronjob to run it periodically
 
 ```
 crontab -e
@@ -49,7 +49,7 @@ crontab -e
 ## Hardware
 
 Sourced from anywhere:
-* Raspberry Pi 3 B+, 4, etc
+* Raspberry Pi 3 B+, 4, etc (install raspbian, enable ssh, update and secure, etc)
 * Case for the RPi (nice to have)
 * Power supply for RPi
 
